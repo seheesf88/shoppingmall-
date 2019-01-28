@@ -1,27 +1,32 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title></title>
-</head>
-<body>
+<% include partials/_head%>
 
 	<!-- Login into accout -->
-	<h2> Login </h2>
-	<form>
-		<input type="email" name="loginEmail" placeholder="Email">
-		<input type="password" name="loginPassword" placeholder="Password">
-		<button type="submit"> Login </button>
-	</form>
+	<section>
+		<h2> Login </h2>
+		<form action="/auths/login" method="POST">
+			<input type="email" name="loginEmail" placeholder="Email" required>
+			<input type="password" name="loginPassword" placeholder="Password" required>
+			<button type="submit"> Login </button>
+		</form>
+	</section>
 
 
 	<!-- Register account -->
-	<h2> Register </h2>
-	<form>
-		<input type="text" name="registerFN" placeholder="First Name">
-		<input type="text" name="registerLN" placeholder="Last Name">
-		<input type="email" name="registerEmail" placeholder="Email">
-		<input type="password" name="registerPassword" placeholder="Password">
-		<button type="submit"> Register </button>
-	</form>
-</body>
-</html>
+	<section>
+		<h2> Register </h2>
+		<form action="/auths/login" method="POST">
+			<input type="text" name="registerFN" placeholder="First Name" required>
+			<input type="text" name="registerLN" placeholder="Last Name" required>
+			<input type="email" name="registerEmail" placeholder="Email" required>
+			<input type="password" name="registerPassword" placeholder="Password" required>
+			<button type="submit"> Register </button>
+		</form>
+	</section>
+
+
+	<!-- Shows an error message if email already exists and has been registered or if the user info could not be found when they tried to log in-->
+	<article>
+		<h3> <%=message%> </h3>
+	</article>
+
+ <% include partials/_foot%>
