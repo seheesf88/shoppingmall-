@@ -11,8 +11,8 @@ const userSchema = new Schema({
 	},
 	hashedPassword : String,
 	admin : Boolean,
-	itemsBrowsed : [Item],
-	itemsBought : [Item]
+	itemsBrowsed : [Item.schema],
+	itemsBought : [Item.schema]
 });
 
 const User = mongoose.model("User", userSchema);
