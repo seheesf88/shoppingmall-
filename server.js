@@ -3,6 +3,7 @@ const app = express();
 require("./db/db");
 const itemControllers = require("./controllers/itemControllers");
 const userControllers = require("./controllers/userControllers");
+const authControllers = require("./controllers/authControllers");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const session = require("express-session");
@@ -18,16 +19,10 @@ app.use(bodyParser.urlencoded({extended: false}));
 
 app.use('/items', itemControllers);
 app.use('/users', userControllers);
+app.use("/auths", authControllers);
 
 app.get("/", (req, res) => {
-	try{
-		res.render("index.ejs");
-	}
-
-	catch(err){
-		res.send(err);
-	}
-
+	res.redirect("/auths/login");
 });
 
 
