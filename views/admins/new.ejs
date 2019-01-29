@@ -1,10 +1,12 @@
 <!-- This is test admin code I wrote to make sure code works on user side -->
 <% include ../partials/_head%>
 <% include ../partials/_navbarAdmin%>
-<form action="/admins/homePage" method="POST">
-	Url: <input type="text" name="imageUrl">
-	Name: <input type="text" name="name">
-	Price: <input type="number" name="price">
-	<button type="submit"> Create </button>
-</form>
+<body>
+	<form action="/admins/homePage" method="POST">
+		Url: <input type="text" name="imageUrl"><br/>
+		Name: <input type="text" name="name"><br/>
+		Price: <input type="number" name="price"><br/>
+		<button type="submit"> Create </button>
+	</form>
+</body>
 <% include ../partials/_foot%>
