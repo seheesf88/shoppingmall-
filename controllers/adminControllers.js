@@ -5,11 +5,11 @@ const Item = require("../models/item");
 
 
 //index
-router.get("/homePage", async (req,res) => {
+router.get("/homepage", async (req,res) => {
 	try{
 		const foundUser = await User.findOne({"email": req.session.email});
 		const allItems = await Item.find({});
-		res.render("homePage.ejs", {
+		res.render("homepage.ejs", {
 			foundUser,
 			allItems
 		});
@@ -28,10 +28,10 @@ router.get("/new", (req, res) => {
 });
 
 //create item
-router.post("/homePage", async (req, res) => {
+router.post("/homepage", async (req, res) => {
 	try{
 		const itemCreated = await Item.create(req.body);
-		res.redirect("/admins/homePage");
+		res.redirect("/admins/homepage");
 	}catch(err){
 		res.send(err);
 	}
@@ -65,7 +65,7 @@ router.get('/:id/edit', async(req, res) => {
 router.put('/:id', async(req, res) => {
 	try {
 		const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {new: true})
-		res.redirect('/admins/homePage')
+		res.redirect('/admins/homepage')
 	}catch(err){
 		res.send(err)
 	}
@@ -77,7 +77,7 @@ router.delete('/:id', (req, res) => {
 		if(err){
 			res.send(err)
 		}else{
-			res.redirect('/admins/homePage')
+			res.redirect('/admins/homepage')
 		}
 	})
 })

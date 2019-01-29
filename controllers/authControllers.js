@@ -20,17 +20,17 @@ router.get("/login", (req,res) =>{
 router.post("/login", async (req, res) => {
 	try{
 
-		// If user selects the option to register his account, you want to collect his 
-		// info and feed that info into the database 
+		// If user selects the option to register his account, you want to collect his
+		// info and feed that info into the database
 		if(req.body.registerEmail){
-			
+
 			console.log("Successfully created an account");
 			// Converting password to hashed password
 			const password = req.body.registerPassword;
 			const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
-		
 
-			// Creating user/ admin object 
+
+			// Creating user/ admin object
 			// console.log(req.body);
 			const userObject = {};
 			userObject.firstName = req.body.registerFN;
@@ -43,7 +43,7 @@ router.post("/login", async (req, res) => {
 				userObject.admin = true;
 			else
 				userObject.admin = false;
-		
+
 
 			// Storing user object into the database
 			const createdUser = await User.create(userObject);
@@ -56,9 +56,9 @@ router.post("/login", async (req, res) => {
 			req.session.logged = true;
 			req.session.message = " ";
 			if(!userObject.admin)
-				res.redirect("/users/homePage");
+				res.redirect("/users/homepage");
 			else
-				res.redirect("/admins/homePage");
+				res.redirect("/admins/homepage");
 		}
 
 
@@ -67,7 +67,7 @@ router.post("/login", async (req, res) => {
 		// the home page on successful login
 		else{
 			const foundUser = await User.findOne({"email": req.body.loginEmail});
-			
+
 
 			if(foundUser){
 				// If user/admin enters proper login details, redirect them to the home page after storing their info into session object
@@ -77,9 +77,9 @@ router.post("/login", async (req, res) => {
 					req.session.logged = true;
 					req.session.message = " ";
 					if(foundUser.admin)
-						res.redirect("/admins/homePage");
+						res.redirect("/admins/homepage");
 					else
-						res.redirect("/users/homePage");
+						res.redirect("/users/homepage");
 				}
 
 
