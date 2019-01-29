@@ -10,14 +10,18 @@
 <h2> Welcome to login page </h2>
 <main>
 	<!-- Need to add items using adminController to view if this works or not -->
-	<%for(let i=0; i<allItems.length; i++) {%>
+	<%for(let i = 0; i < allItems.length; i++) {%>
 		<div class = "itemContainer">
 			<img src="<%=allItems[i].imageUrl%>">
 			<div class = "itemInfo">
 				<h2><%=allItems[i].name%></h2>
 				<h2><%=allItems[i].price%></h2>
 			</div>
-			<a href="/users/<%=allItems[i]._id%>"> Info </a>
+			<%if(!foundUser.admin){%>
+			 	<a href="/users/<%=allItems[i]._id%>"> Info </a>
+			 <%}else{%>
+			 	<a href="/admins/<%=allItems[i]._id%>"> Info </a>
+			 <%}%>
 		</div>
 	<%}%>
 </main>
