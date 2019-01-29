@@ -1,7 +1,7 @@
 const express = require("express");
 const app = express();
 require("./db/db");
-const itemControllers = require("./controllers/itemControllers");
+const adminControllers = require("./controllers/adminControllers");
 const userControllers = require("./controllers/userControllers");
 const authControllers = require("./controllers/authControllers");
 const bodyParser = require("body-parser");
@@ -17,7 +17,7 @@ app.use(session({
 app.use(methodOverride('_method'));
 app.use(bodyParser.urlencoded({extended: false}));
 
-app.use('/items', itemControllers);
+app.use('/admins', adminControllers);
 app.use('/users', userControllers);
 app.use("/auths", authControllers);
 
