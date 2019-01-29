@@ -3,8 +3,10 @@ const router  = express.Router();
 const bcrypt = require("bcryptjs");
 const User = require("../models/user")
 
+
 router.get("/login", (req,res) =>{
 	try{
+
 		res.render("index.ejs", {
 			message : req.session.message
 		});
@@ -28,16 +30,19 @@ router.post("/login", async (req, res) => {
 			const hashedPassword = bcrypt.hashSync(password, bcrypt.genSaltSync(10));
 		
 
-			// Creating user object 
+			// Creating user/ admin object 
 			// console.log(req.body);
 			const userObject = {};
 			userObject.firstName = req.body.registerFN;
 			userObject.lastName = req.body.registerLN;
 			userObject.email = req.body.registerEmail;
 			userObject.hashedPassword = hashedPassword;
-			userObject.admin = false;
 			userObject.itemsBrowsed = [];
 			userObject.itemsBought = [];
+			if(userObject.email === "admin@gmail.com")
+				userObject.admin = true;
+			else
+				userObject.admin = false;
 		
 
 			// Storing user object into the database
@@ -45,11 +50,15 @@ router.post("/login", async (req, res) => {
 			console.log("createdUser " + createdUser);
 
 
-			// Storing current user email and loggedProperty in session and redirect them to the home page
+			// Storing current user email and loggedProperty in session and redirect them to the home page depending
+			// on whether they are and admin or user
 			req.session.email = userObject.email;
 			req.session.logged = true;
 			req.session.message = " ";
-			res.redirect("/auths/homePage");
+			if(!userObject.admin)
+				res.redirect("/users/homePage");
+			else
+				res.redirect("/admins/homePage");
 		}
 
 
@@ -61,13 +70,16 @@ router.post("/login", async (req, res) => {
 			
 
 			if(foundUser){
-				// If user enters proper login details, redirect them to the home page after storing their info into session object
+				// If user/admin enters proper login details, redirect them to the home page after storing their info into session object
 				if(bcrypt.compareSync(req.body.loginPassword, foundUser.hashedPassword)){
 					console.log("loggedIn" +foundUser);
 					req.session.email = req.body.loginEmail;
 					req.session.logged = true;
 					req.session.message = " ";
-					res.redirect("/auths/homePage");
+					if(foundUser.admin)
+						res.redirect("/admins/homePage");
+					else
+						res.redirect("/users/homePage");
 				}
 
 
@@ -92,17 +104,6 @@ router.post("/login", async (req, res) => {
 		res.redirect("/auths/login");
 
 		// res.send(err);
-	}
-});
-
-
-router.get("/homePage", (req, res) => {
-	try{
-		res.render("homePage.ejs");
-	}
-
-	catch(err){
-		res.send(err);
 	}
 });
 

@@ -8,6 +8,7 @@ const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const session = require("express-session");
 
+
 app.use(session({
   secret: "THIS IS A RANDOM STRING SECRET",
   resave: false,
