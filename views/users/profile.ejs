@@ -1,0 +1,17 @@
+<% include ../partials/_head%>
+<% include ../partials/_navbarUser%>
+
+
+<form action="/users/profile/<%=currentUser._id%>?_method=PUT" method="POST">
+	<h2> Profile </h2>
+	<span> First Name: </span> <input type="text" name="firstName" placeholder="<%=currentUser.firstName%>">
+	<span> Last Name: </span> <input type="text" name="lastName" placeholder="<%=currentUser.lastName%>">
+	<span> Password: </span> <input type="password" name="hashedPassword">
+	<button type="submit"> Update </button>
+</form>
+
+<%= message %>
+
+
+
+<% include ../partials/_foot%>
