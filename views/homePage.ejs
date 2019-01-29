@@ -1,5 +1,14 @@
 <% include partials/_head%>
 
+<%if(!foundUser.admin){%>
+	<% include partials/_navbarUser%>
+<%} else{%>
+	<% include partials/_navbarAdmin%>
+<%}%>
+
+
 <h2> Welcome to login page </h2>
+
+
 
 <% include partials/_foot%>
