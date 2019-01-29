@@ -4,8 +4,8 @@
 
 <form action="/users/profile/<%=currentUser._id%>?_method=PUT" method="POST">
 	<h2> Profile </h2>
-	<span> First Name: </span> <input type="text" name="firstName" placeholder="<%=currentUser.firstName%>">
-	<span> Last Name: </span> <input type="text" name="lastName" placeholder="<%=currentUser.lastName%>">
+	<span> First Name: </span> <input type="text" name="firstName" value="<%=currentUser.firstName%>">
+	<span> Last Name: </span> <input type="text" name="lastName" value="<%=currentUser.lastName%>">
 	<span> Password: </span> <input type="password" name="hashedPassword">
 	<button type="submit"> Update </button>
 </form>
