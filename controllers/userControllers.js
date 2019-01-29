@@ -5,15 +5,15 @@ const Item = require("../models/item");
 
 
 
-router.get("/homePage", async (req,res) => {
+router.get("/homepage", async (req,res) => {
 	try{
 
-		// Render the home page for the user 
+		// Render the home page for the user
 		const foundUser = await User.findOne({"email": req.session.email});
 		const allItems = await Item.find({});
 		console.log(foundUser);
 
-		res.render("homePage.ejs", {
+		res.render("homepage.ejs", {
 			foundUser,
 			allItems
 		});
