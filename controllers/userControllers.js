@@ -4,7 +4,7 @@ const User = require("../models/user");
 const Item = require("../models/item");
 
 
-
+// Get route got /homePage
 router.get("/homePage", async (req,res) => {
 	try{
 
