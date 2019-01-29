@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="#">Home</a></li>
+          <li><a href="#">index</a></li>
+          <li><a href="#">Log out</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <% for (let i = 0; i < items.length; i++){%>
+        <ul>
+          <li>
+            <div>items[i].imageUrl</div><br/>
+            <div>items[i].name</div><br/>
+            <div>items[i].price</div><br/>
+          </li>
+          <button type="submit" name="button">detail</button>
+        </ul>
+    <%}%>
+    </main>
+  </body>
+</html>
+  
