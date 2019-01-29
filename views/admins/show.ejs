@@ -1,0 +1,15 @@
+<% include ../partials/_head%>
+<% include ../partials/_navbarAdmin%>
+
+<main>
+    <h1><%= item.name %></h1>
+      <%= item.imageUrl%><br/>
+      Name : <%= item.name %><br/>
+      Price : <%= item.price %><br/>
+      <a href="/admins/<%=item._id%>/edit">Edit</a>
+      <form action="/admins/<%=item._id%>?_method=DELETE" method="POST">
+        <button type="submit" name="button">Delete</button>
+      </form>
+</main>
+
+<% include ../partials/_foot%>
