@@ -1,14 +1,14 @@
 <% include ../partials/_head%>
 <% include ../partials/_navbarAdmin%>
-  <body>
-    <main>
-        <h1>Edit item</h1>
-          <form action="/admins/<%=item._id%>?_method=PUT" method="POST">
-            Name : <input type="text" name="name" value="<%=item.name%>">
-            Price: <input type="text" name="price" value="<%=item.price%>">
-            Image: <input type="text" name="imageUrl" value="<%=item.imageUrl%>">
-            <button type="submit" name="button">Update</button>
-          </form>
-    </main>
-  </body>
+
+<main>
+    <h1>Edit item</h1>
+        <form action="/admins/<%=item._id%>?_method=PUT" method="POST">
+          Name : <input type="text" name="name" value="<%=item.name%>">
+          Price: <input type="text" name="price" value="<%=item.price%>">
+          Image: <input type="text" name="imageUrl" value="<%=item.imageUrl%>">
+          <button type="submit" name="button">Update</button>
+        </form>
+</main>
+
 <% include ../partials/_foot%>
