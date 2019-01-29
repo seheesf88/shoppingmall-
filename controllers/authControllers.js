@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const User = require("../models/user")
 
 
+// Get route for /login
 router.get("/login", (req,res) =>{
 	try{
 
@@ -16,7 +17,23 @@ router.get("/login", (req,res) =>{
 	}
 });
 
+// Get route for /logout
+router.get("/logout", (req,res) => {
+	try{
+		console.log("Before logout: "+ req.session);
+		req.session.destroy();
+		res.redirect("/auths/login");
+		console.log("After logout: "+ req.session);
+	}
 
+	catch(err){
+		res.send(err);
+	}
+});
+
+
+
+// New & Create route for /login
 router.post("/login", async (req, res) => {
 	try{
 
