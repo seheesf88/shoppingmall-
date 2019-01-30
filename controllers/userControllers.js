@@ -5,7 +5,7 @@ const User = require("../models/user");
 const Item = require("../models/item");
 
 
-// Get route got /homePage
+// Get route got /homepage
 router.get("/homepage", async (req,res) => {
 	try{
 
@@ -109,8 +109,11 @@ router.put("/profile/:id", async (req, res) => {
 
 
 // Post request on /users/cardVerify [Verify card info]
-router.post("/cardVerify", (req, res) => {
+router.delete("/cardVerify/:id", async (req, res) => {
 	try{
+		// Since the item is bought, it needs to be removed from the database and then the 
+		// user must be redirected to a "thank you for shopping" page
+		const deletedItem = await Item.findByIdAndRemove(req.params.id);
 		res.render("users/thankYou.ejs");
 	}
 
