@@ -5,21 +5,21 @@
   <h1 class="text-center mt-2 mb-4 pt-2 pb-4"><%= item.name %></h1>
   <div class="container mt-5 pt-5">
     <div class="row">
-      <div class="col-3 offset-2">
-          <img src="<%= item.imageUrl%>" height="150" width="150" class="rounded" alt="..."><br/>
+      <div class="col-4 offset-1 pt-5">
+          <img src="<%= item.imageUrl%>" height="200" width="200" class="rounded" mb-1><br/>
       </div>
-      <div class="col-3 offset-1">
-          <p class="h3">Name : <%= item.name %></p>
-          <p class="h3">Price : $ <%= item.price %></p>
-          <p class="h3">Category: <%= item.category %></p>
-          <p class="h3">Location: <%= item.location %></p>
-          <p class="h3">In Stock: <%= item.inStock %></p>
+      <div class="info col-5 offset-1">
+              <p class=""><span class="infoList">Name     </span><%= item.name %></p>
+              <p class=""><span class="infoList">Price :   </span>$ <%= item.price %></p>
+              <p class=""><span class="infoList">Category: </span> <%= item.category %></p>
+              <p class=""><span class="infoList">Location: </span> <%= item.location %></p>
+              <p class=""><span class="infoList">In Stock: </span> <%= item.inStock %></p>
       </div>
     </div>
   </div>
 
   <div class="container mt-5 pt-5">
-    <div class="col-10 offset-1 pb-4">
+    <div class="col-10 offset-1 pb-4 h3">
         Discription:
       </div>
       <div class="col-10 offset-1 border">
@@ -30,13 +30,13 @@
   </div>
 
   <div class="container mt-5 pt-5">
-    <div class="row">
+    <div class="row d-flex justify-content-around">
       <div class="col-1 offset-5">
-        <a href="/admins/<%=item._id%>/edit">Edit</a>
+        <a href="/admins/<%=item._id%>/edit" class="btn btn-lg btn-outline-secondary">Edit</a>
       </div>
       <div class="col-1">
         <form action="/admins/<%=item._id%>?_method=DELETE" method="POST">
-          <button type="submit" name="button">Delete</button>
+          <button type="submit" name="button" class="btn btn-lg btn-outline-secondary">Delete</button>
         </form>
       </div>
     </div>
