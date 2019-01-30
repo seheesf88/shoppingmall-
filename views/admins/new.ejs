@@ -2,12 +2,35 @@
 <% include ../partials/_navbarAdmin%>
 
 <main>
-	<form action="/admins/homePage" method="POST">
-		Url: <input type="text" name="imageUrl"><br/>
-		Name: <input type="text" name="name"><br/>
-		Price: <input type="number" name="price"><br/>
-		<button type="submit"> Create </button>
-	</form>
-</main>
+	<!-- <form action="/admins/homePage" method="POST"> -->
+		<!-- Url: <input type="text" name="imageUrl"><br/> -->
+		<!-- Name: <input type="text" name="name"><br/> -->
+		<!-- Price: <input type="number" name="price"><br/> -->
+		<!-- <button type="submit"> Create </button> -->
+		<div class="container">
+			<div class="text-center mt-4">
+					<h1>Create new item</h1>
+			</div>
+					<div class="row mb-4">
+						<div class="col-md-8 offset-2 mt-5">
+							<form action="/admins/homePage" method="POST">
+		  						<div class="form-group">
+		    							<label class="mb-0" for="exName">Name</label>
+		    							<input type="text" name="name" required class="form-control" id="exName" placeholder="item name">
+		  						</div>
+		  						<div class="form-group">
+		    							<label class="mb-0" for="exPrice">Price</label>
+		    							<input type="number" name="price" required class="form-control" id="exPrice" placeholder="price">
+		  						</div>
+									<div class="form-group">
+											<label class="mb-0" for="exUrl">Url</label>
+											<input type="url" name="imageUrl" required class="form-control" id="exUrl" placeholder="url">
+									</div>
+									<div class="text-center">
+		  								<button type="submit" class="btn btn-primary">Create</button>
+									</div>
+								</form>
+						</div>
+		</main>
 
 <% include ../partials/_foot%>

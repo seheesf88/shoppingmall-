@@ -2,50 +2,51 @@
 
 	<!-- Login into accout -->
 <div class="container">
-	<div class="">
+	<div class="text-center mt-4">
 			<h1>welcome to our app</h1>
 	</div>
 			<div class="row mb-4">
-				<div class="col-md-4 offset-md-4">
-					<div>
-					<h2> Login </h2>
+				<div class="col-md-4 offset-1 mt-5">
+					<h2 class="mb-5"> Login </h2>
 						<form action="/auths/login" method="POST">
   						<div class="form-group">
-    							<label for="exEmail">Email address</label>
+    							<label class="mb-0" for="exEmail">Email address</label>
     						<input type="email" name="loginEmail" required class="form-control" id="exEmail" aria-describedby="emailHelp" placeholder="Enter email">
-    							<small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
   						</div>
   						<div class="form-group">
-    						<label for="exPassword">Password</label>
+    						<label class="mb-0" for="exPassword">Password</label>
     					<input type="password" name="loginPassword" required class="form-control" id="exPassword" placeholder="Password">
   						</div>
+							<div class="text-right">
   						<button type="submit" class="btn btn-primary">Log in</button>
+							</div>
 						</form>
-					</div>
-					<div>
-							<h2> Register </h2>
+				</div>
+				<div class="col-md-4 offset-1 mt-5">
+							<h2 class="mb-5 text-"> Register </h2>
 							<form action="/auths/login" method="POST">
 		  					<div class="form-group">
-		    						<label for="exampleInputEmail1">Email address</label>
+		    						<label class="mb-0" for="exampleInputEmail1">Email address</label>
 		    					<input type="text" name="registerFN" placeholder="First Name" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
 		  					</div>
 		  					<div class="form-group">
-		    					<label for="exampleInputPassword1">Password</label>
+		    					<label class="mb-0" for="exampleInputPassword1">Password</label>
 		    					<input type="text" name="registerLN" placeholder="Last Name" required class="form-control" id="exampleInputPassword1">
 		  					</div>
 								<div class="form-group">
-										<label for="exEmail">Email address</label>
+										<label class="mb-0" for="exEmail">Email address</label>
 									<input type="email" name="registerEmail" required class="form-control" id="exEmail" aria-describedby="emailHelp" placeholder="Enter email">
 								</div>
 								<div class="form-group">
-									<label for="exPassword">Password</label>
+									<label class="mb-0" for="exPassword">Password</label>
 								<input type="password" name="registerPassword" required class="form-control" id="exPassword" placeholder="Password">
 								</div>
-		  				<button type="submit" class="btn btn-primary">Register</button>
+								<div class="text-right">
+								<button type="submit" class="btn btn-primary">Register</button>
+								</div>
 						</form>
 				</div>
 		</div>
-	</div>
 </div>
 
 
