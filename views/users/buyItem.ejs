@@ -1,0 +1,30 @@
+<% include ../partials/_head%>
+<% include ../partials/_navbarUser%>
+
+<h2> Item Being Bought </h2>
+
+<img src="<%=showItem.imageUrl%>">
+<h3> Name: <%=showItem.name%></h3>
+<h3> Price: $<%=showItem.price%></h3>
+
+<form action="/users/cardverify/<%=showItem._id%>?_method=DELETE" method="POST">
+	<h2> Credit Card Info </h2>
+
+	<input type="text" name="cardName" placeholder="Name on Card" required>
+	<input type="number" name="cardNumber" placeholder="Card Number" required>
+	<input type="month" name="expDate" min="2019-01" placeholder="Expiration" required>
+	<input type="password" name="cvv" minlength="3" maxlength="3" placeholder="CVV" required>
+
+	<h2> Delivery Info </h2>
+
+
+	<input type="text" name="address" placeholder="Address" required>
+	<input type="number" name="aptNumber" placeholder="Apt Number" required>
+	<input type="text" name="city" placeholder="City" required>
+	<input type="text" name="state" placeholder="State" required>
+	<input type="number" name="zip" placeholder="Zip Code" required>
+
+	<button type="submit"> Buy </button>
+</form>
+
+<% include ../partials/_foot%>

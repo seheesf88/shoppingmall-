@@ -1,0 +1,13 @@
+<% include ../partials/_head%>
+<% include ../partials/_navbarUser%>
+
+<h2> Items Bought </h2>
+<%for(let i=0; i<currentUser.itemsBought.length; i++) {%>
+	<div class = "itemContainer">
+		<img src="<%=currentUser.itemsBought[i].imageUrl%>">
+		<h3> Name: <%=currentUser.itemsBought[i].name%></h3>
+		<h3> Price: $<%=currentUser.itemsBought[i].price%></h3>
+	</div>
+<%}%>
+
+<% include ../partials/_foot%>

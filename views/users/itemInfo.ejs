@@ -1,0 +1,14 @@
+<% include ../partials/_head%>
+<% include ../partials/_navbarUser%>
+
+<h2> Item Info </h2>
+
+<img src="<%=showItem.imageUrl%>">
+<h3> Name: <%=showItem.name%></h3>
+<h3> Price: $<%=showItem.price%></h3>
+<a href="/users/buy/<%=showItem._id%>"> Buy Item</a>
+
+
+
+
+<% include ../partials/_foot%>

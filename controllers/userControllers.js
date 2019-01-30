@@ -5,7 +5,7 @@ const User = require("../models/user");
 const Item = require("../models/item");
 
 
-
+// Get route got /homepage
 router.get("/homepage", async (req,res) => {
 	try{
 
@@ -42,6 +42,42 @@ router.get("/profile", async (req, res) => {
 		res.send(err);
 	}
 });
+
+
+// Get route for /orderhistory
+router.get("/orderhistory", async (req, res) => {
+	try{
+		const currentUser = await User.findOne({"email" : req.session.email});
+		res.render("users/orderHistory.ejs", {
+			currentUser
+		});
+
+	}
+
+	catch(err){
+		res.send(err);
+	}
+});
+
+
+// Show route for /items info
+router.get("/items/:id", async(req, res) => {
+	const showItem = await Item.findById(req.params.id);
+	res.render("users/itemInfo.ejs", {
+		showItem
+	});
+});
+
+
+// Show route for /buy [Items that are bought]
+router.get("/buy/:id", async (req,res) => {
+	const showItem = await Item.findById(req.params.id);
+	res.render("users/buyItem.ejs", {
+		showItem
+	});
+});
+
+
 
 // Edit route for user profile
 router.get("/profile/:id/edit", async (req, res) => {
@@ -89,7 +125,28 @@ router.put("/profile/:id", async (req, res) => {
 });
 
 
-// U
+
+// Post request on /users/cardVerify [Verify card info]
+router.delete("/cardVerify/:id", async (req, res) => {
+	try{
+		// Since the item is bought, it needs to be removed from the database, added to the user who bought it
+		//and then the user must be redirected to a "thank you for shopping" page
+		const deletedItem = await Item.findByIdAndRemove(req.params.id);
+		console.log("deletedItem : " +deletedItem);
+		const buyingUser = await User.findOne({"email" : req.session.email});
+		console.log("buyingUser : " +buyingUser);
+		buyingUser.itemsBought.push(deletedItem);
+		buyingUser.save();
+		res.render("users/thankYou.ejs");
+	}
+
+	catch(err){
+		res.send(err);
+	}
+});
+
+
+
 
 
 module.exports = router;
