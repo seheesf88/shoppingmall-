@@ -19,20 +19,21 @@
 
 						<div class="itemContainer col-md-4">
 				      <div class="card mb-4 shadow-sm">
-				        <img src="<%=allItems[i].imageUrl%>" class="img-fluid m-3" />
+				        <img src="<%=allItems[i].imageUrl%>" class="img-fluid ml-0 mt-3 mr-3 p-3" />
 									<div class="itemInfo text-center">
 										<h2><%=allItems[i].name%></h2>
 										<h2>$ <%=allItems[i].price%></h2>
 									</div>
 
 								<div class="card-body">
-				          <div class="d-flex justify-content-between align-items-center">
+				          <div class="text-center">
 
 										<%if(!foundUser.admin){%>
 												<a href="/users/items/<%=allItems[i]._id%>" class="btn btn-sm btn-outline-secondar">View</a>
 										<%}else{%>
 												<a href="/admins/<%=allItems[i]._id%>" class="btn btn-sm btn-outline-secondary">View</a>
 										<%}%>
+
 				          </div>
 				        </div>
 				      </div>
