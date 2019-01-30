@@ -7,7 +7,7 @@
 <h3> Name: <%=showItem.name%></h3>
 <h3> Price: $<%=showItem.price%></h3>
 
-<form action="/users/cardverify" method="POST">
+<form action="/users/cardverify/<%=showItem._id%>?_method=DELETE" method="POST">
 	<h2> Credit Card Info </h2>
 
 	<input type="text" name="cardName" placeholder="Name on Card" required>
