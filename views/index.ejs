@@ -1,27 +1,53 @@
 <% include partials/_head%>
 
 	<!-- Login into accout -->
-	<section>
-		<h2> Login </h2>
-		<form action="/auths/login" method="POST">
-			<input type="email" name="loginEmail" placeholder="Email" required>
-			<input type="password" name="loginPassword" placeholder="Password" required>
-			<button type="submit"> Login </button>
-		</form>
-	</section>
-
-
-	<!-- Register account -->
-	<section>
-		<h2> Register </h2>
-		<form action="/auths/login" method="POST">
-			<input type="text" name="registerFN" placeholder="First Name" required>
-			<input type="text" name="registerLN" placeholder="Last Name" required>
-			<input type="email" name="registerEmail" placeholder="Email" required>
-			<input type="password" name="registerPassword" placeholder="Password" required>
-			<button type="submit"> Register </button>
-		</form>
-	</section>
+<div class="container">
+	<div class="text-center mt-4">
+			<h1>welcome to our app</h1>
+	</div>
+			<div class="row mb-4">
+				<div class="col-md-4 offset-1 mt-5">
+					<h2 class="mb-5"> Login </h2>
+						<form action="/auths/login" method="POST">
+  						<div class="form-group">
+    							<label class="mb-0" for="exEmail">Email address</label>
+    						<input type="email" name="loginEmail" required class="form-control" id="exEmail" aria-describedby="emailHelp" placeholder="Enter email">
+  						</div>
+  						<div class="form-group">
+    						<label class="mb-0" for="exPassword">Password</label>
+    					<input type="password" name="loginPassword" required class="form-control" id="exPassword" placeholder="Password">
+  						</div>
+							<div class="text-right">
+  						<button type="submit" class="btn btn-primary">Log in</button>
+							</div>
+						</form>
+				</div>
+				<div class="col-md-4 offset-1 mt-5">
+							<h2 class="mb-5 text-"> Register </h2>
+							<form action="/auths/login" method="POST">
+		  					<div class="form-group">
+		    						<label class="mb-0" for="exampleInputEmail1">First Name</label>
+		    					<input type="text" name="registerFN" placeholder="First Name" required class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+		  					</div>
+		  					<div class="form-group">
+		    					<label class="mb-0" for="exampleInputPassword1">Last Name</label>
+		    					<input type="text" name="registerLN" placeholder="Last Name" required class="form-control" id="exampleInputPassword1">
+		  					</div>
+								<div class="form-group">
+										<label class="mb-0" for="exEmail">Email address</label>
+									<input type="email" name="registerEmail" required class="form-control" id="exEmail" aria-describedby="emailHelp" placeholder="Enter email">
+								</div>
+								<div class="form-group">
+									<label class="mb-0" for="exPassword">Password</label>
+								<input type="password" name="registerPassword" required class="form-control" id="exPassword" placeholder="Password">
+								</div>
+								<div class="text-right">
+								<button type="submit" class="btn btn-primary">Register</button>
+								</div>
+						</form>
+				</div>
+		</div>
+</div>
 
 
 	<!-- Shows an error message if email already exists and has been registered or if the user info could not be found when they tried to log in-->
@@ -30,7 +56,3 @@
 	</article>
 
  <% include partials/_foot%>
-
-
-
- 

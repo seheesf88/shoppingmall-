@@ -9,12 +9,12 @@ const Item = require("../models/item");
 router.get("/homepage", async (req,res) => {
 	try{
 
-		// Render the home page for the user 
+		// Render the home page for the user
 		const foundUser = await User.findOne({"email": req.session.email});
 		const allItems = await Item.find({});
 		console.log(foundUser);
 
-		res.render("homePage.ejs", {
+		res.render("homepage.ejs", {
 			foundUser,
 			allItems
 		});
@@ -25,6 +25,8 @@ router.get("/homepage", async (req,res) => {
 	}
 });
 
+
+module.exports = router;
 
 // Get route for /profile
 router.get("/profile", async (req, res) => {
@@ -113,7 +115,7 @@ router.put("/profile/:id", async (req, res) => {
 		const updatedUser = await User.findByIdAndUpdate(req.params.id, req.body, {new: true});
 		console.log("updatedUser" + updatedUser);
 
-		req.session.message = "Profile updated";	
+		req.session.message = "Profile updated";
 		res.redirect("/users/profile/"+updatedUser._id+"/edit");
 	}
 
@@ -127,7 +129,7 @@ router.put("/profile/:id", async (req, res) => {
 // Post request on /users/cardVerify [Verify card info]
 router.delete("/cardVerify/:id", async (req, res) => {
 	try{
-		// Since the item is bought, it needs to be removed from the database, added to the user who bought it 
+		// Since the item is bought, it needs to be removed from the database, added to the user who bought it
 		//and then the user must be redirected to a "thank you for shopping" page
 		const deletedItem = await Item.findByIdAndRemove(req.params.id);
 		console.log("deletedItem : " +deletedItem);
