@@ -6,7 +6,7 @@ const Item = require("../models/item");
 
 
 // Get route got /homePage
-router.get("/homePage", async (req,res) => {
+router.get("/homepage", async (req,res) => {
 	try{
 
 		// Render the home page for the user 
@@ -40,6 +40,26 @@ router.get("/profile", async (req, res) => {
 		res.send(err);
 	}
 });
+
+
+// Show route for /items info
+router.get("/items/:id", async(req, res) => {
+	const showItem = await Item.findById(req.params.id);
+	res.render("users/itemInfo.ejs", {
+		showItem
+	});
+});
+
+
+// Show route for /buy [Items that are bought]
+router.get("/buy/:id", async (req,res) => {
+	const showItem = await Item.findById(req.params.id);
+	res.render("users/buyItem.ejs", {
+		showItem
+	});
+});
+
+
 
 // Edit route for user profile
 router.get("/profile/:id/edit", async (req, res) => {
@@ -87,7 +107,18 @@ router.put("/profile/:id", async (req, res) => {
 });
 
 
-// U
+
+// Post request on /users/cardVerify [Verify card info]
+router.post("/cardVerify", (req, res) => {
+	try{
+		res.render("users/thankYou.ejs");
+	}
+
+	catch(err){
+		res.send(err);
+	}
+});
+
 
 
 module.exports = router;

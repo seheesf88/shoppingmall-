@@ -73,9 +73,9 @@ router.post("/login", async (req, res) => {
 			req.session.logged = true;
 			req.session.message = " ";
 			if(!userObject.admin)
-				res.redirect("/users/homePage");
+				res.redirect("/users/homepage");
 			else
-				res.redirect("/admins/homePage");
+				res.redirect("/admins/homepage");
 		}
 
 
@@ -94,9 +94,9 @@ router.post("/login", async (req, res) => {
 					req.session.logged = true;
 					req.session.message = " ";
 					if(foundUser.admin)
-						res.redirect("/admins/homePage");
+						res.redirect("/admins/homepage");
 					else
-						res.redirect("/users/homePage");
+						res.redirect("/users/homepage");
 				}
 
 
