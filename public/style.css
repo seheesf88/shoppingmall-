@@ -18,6 +18,10 @@ img {
   width: 100%;
 }
 
+.nav-item {
+  font-size: 24px;
+}
+
 .top-section {
   height: 440px;
   background-color: rgba(255,0,0,0.1);
