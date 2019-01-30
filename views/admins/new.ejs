@@ -2,11 +2,6 @@
 <% include ../partials/_navbarAdmin%>
 
 <main>
-	<!-- <form action="/admins/homePage" method="POST"> -->
-		<!-- Url: <input type="text" name="imageUrl"><br/> -->
-		<!-- Name: <input type="text" name="name"><br/> -->
-		<!-- Price: <input type="number" name="price"><br/> -->
-		<!-- <button type="submit"> Create </button> -->
 		<div class="container">
 			<div class="text-center mt-4">
 					<h1>Create new item</h1>
@@ -23,8 +18,34 @@
 		    							<input type="number" name="price" required class="form-control" id="exPrice" placeholder="price">
 		  						</div>
 									<div class="form-group">
+											<label class="mb-0" for="exCategory">Category</label>
+											<select name="category" required class="form-control" id="exCategory" placeholder="Category">
+  											<option value="food">Food</option>
+  											<option value="clotthing">Clothing</option>
+  											<option value="electroics">Electronics</option>
+  											<option value="funiture">Funiture</option>
+												<option value="toy">Toy</option>
+											</select>
+									</div>
+									<div class="form-group">
+											<label class="mb-0" for="exlocation">Location</label>
+											<input type="text" name="location" required class="form-control" id="exlocation" placeholder="City, State">
+									</div>
+									<div class="form-group">
+											<label class="mb-0" for="exinStock">In stock</label>
+											<!-- <input type="Number" name="delivery" required class="form-control" id="exinStock" placeholder="true"> -->
+											<select name="inStock" required class="form-control" id="exinStock" placeholder="In Stock">
+  											<option value="true">in Stock</option>
+  											<option value="false">coming soon</option>
+											</select>
+									</div>
+									<div class="form-group">
 											<label class="mb-0" for="exUrl">Url</label>
 											<input type="url" name="imageUrl" required class="form-control" id="exUrl" placeholder="url">
+									</div>
+									<div class="form-group">
+											<label class="mb-0" for="exDiscription">Discription</label>
+											<textarea name="discription" rows="8" cols="80" required class="form-control" id="exDiscription" placeholder="enter discription"></textarea>
 									</div>
 									<div class="text-center">
 		  								<button type="submit" class="btn btn-primary">Create</button>
