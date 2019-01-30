@@ -23,7 +23,7 @@
 						<h2>$ <%=allItems[i].price%></h2>
 
 						<%if(!foundUser.admin){%>
-							<a href="/users/<%=allItems[i]._id%>"> Info </a>
+							<a href="/users/items/<%=allItems[i]._id%>"> Info </a>
 				 		<%}else{%>
 							<a href="/admins/<%=allItems[i]._id%>"> Info </a>
 				 		<%}%>
