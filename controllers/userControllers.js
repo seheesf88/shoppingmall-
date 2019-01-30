@@ -26,9 +26,8 @@ router.get("/homepage", async (req,res) => {
 });
 
 
-<<<<<<< HEAD
 module.exports = router;
-=======
+
 // Get route for /profile
 router.get("/profile", async (req, res) => {
 	try{
@@ -94,4 +93,3 @@ router.put("/profile/:id", async (req, res) => {
 
 
 module.exports = router;
->>>>>>> d46aaf415e766d369e2a2b88d3fc40bc37049091
