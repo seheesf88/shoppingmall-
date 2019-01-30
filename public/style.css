@@ -1,0 +1,53 @@
+html {
+  position: relative;
+  min-height: 100vh;
+}
+
+body {
+  margin-bottom: 140px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+}
+
+img {
+  display: block;
+  width: 100%;
+}
+
+.top-section {
+  height: 440px;
+  background-color: rgba(255,0,0,0.1);
+  background-image: url(images/temp-bg.jpg);
+  background-size: cover;
+  background-position-y: -200px;
+  background-repeat: no-repeat;
+}
+
+.jumbotron {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  margin-bottom: 0;
+  background-color: #fff;
+}
+@media (min-width: 768px) {
+  .jumbotron {
+    padding-top: 6rem;
+    padding-bottom: 6rem;
+  }
+}
+
+.jumbotron p:last-child {
+  margin-bottom: 0;
+}
+
+.jumbotron-heading {
+  font-weight: 300;
+}
+
+.jumbotron .container {
+  max-width: 40rem;
+}
