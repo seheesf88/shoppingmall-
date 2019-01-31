@@ -35,13 +35,27 @@ img {
   font-size: 24px;
 }
 
-.top-section {
+/* .top-section {
   height: 440px;
   background-color: rgba(255,0,0,0.1);
   background-image: url(images/temp-bg.jpg);
   background-size: cover;
   background-position-y: -200px;
   background-repeat: no-repeat;
+} */
+
+.top-section {
+  height: 320px;
+  background-color: rgba(255,0,0,0.1);
+  background-image: url(images/LOGO-03.png);
+  background-size: cover;
+  /* background-position-y: -200px; */
+  background-repeat: no-repeat;
+}
+
+#logo {
+  height: 60px;
+  width: 80%;
 }
 
 .jumbotron {
