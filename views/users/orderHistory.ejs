@@ -1,12 +1,17 @@
 <% include ../partials/_head%>
 <% include ../partials/_navbarUser%>
 
-<h2> Items Bought </h2>
+<div class="container text-center">
+	<h2> Order History </h2>	
+</div>
+
 <%for(let i=0; i<currentUser.itemsBought.length; i++) {%>
-	<div class = "itemContainer">
-		<img src="<%=currentUser.itemsBought[i].imageUrl%>">
-		<h3> Name: <%=currentUser.itemsBought[i].name%></h3>
-		<h3> Price: $<%=currentUser.itemsBought[i].price%></h3>
+	<div class = "col-4 card m-5 border-primary">
+		<img src="<%=currentUser.itemsBought[i].imageUrl%>" class ="card-img-top">
+		<div class="card-body text-center">
+			<h3 class="card-title"> Name: <%=currentUser.itemsBought[i].name%></h3>
+			<h3 class="card-text"> Price: $<%=currentUser.itemsBought[i].price%></h3>
+		</div>
 	</div>
 <%}%>
 
