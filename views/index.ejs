@@ -1,9 +1,9 @@
-<% include partials/_head%>
+<% include partials/_headLogin%>
 
 	<!-- Login into accout -->
 <div class="container">
 	<div class="text-center mt-4">
-			<h1>welcome to our app</h1>
+			<h1>Welcome To Our App</h1>
 	</div>
 			<div class="row mb-4">
 				<div class="col-md-4 offset-1 mt-5">
@@ -63,7 +63,7 @@
 
 <!-- Shows an error message if email already exists and has been registered or if the user info could not be found when they tried to log in-->
 	<%console.log(message)%>
-	<%if(message !== undefined){%>
+	<%if(!((message === undefined) || (message === " "))){%>
 			<div class="alert alert-warning alert-dismissible fade show text-center" role="alert">
 				<strong><%=message%></strong>
 				<button type="button" class="close" data-dismiss="alert" aria-label="Close">

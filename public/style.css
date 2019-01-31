@@ -39,6 +39,11 @@ img {
   background-repeat: no-repeat;
 }
 
+.styledCarouselImage{
+  height: 500px;
+  width: 100%;
+}
+
 .jumbotron {
   padding-top: 3rem;
   padding-bottom: 3rem;
@@ -62,4 +67,9 @@ img {
 
 .jumbotron .container {
   max-width: 40rem;
+}
+
+.picture{
+  height: 200px;
+  width: 200px;
 }
