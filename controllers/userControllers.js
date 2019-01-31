@@ -90,6 +90,7 @@ router.get("/profile/:id/edit", async (req, res) => {
 		res.render("users/profile.ejs", {
 			currentUser,
 			message: req.session.message
+
 		});
 	}
 

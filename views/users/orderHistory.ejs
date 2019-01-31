@@ -23,22 +23,25 @@
           <img src="<%=currentUser.itemsBought[i].imageUrl%>" height="300" width="300" class ="rounded">
       </div>
       <div class="info col-5 offset-1 mr-3 mb-3">
-      		<p class=""><span class="infoList">Name:     </span><%= currentUser.itemsBought[i].name %></p>
-            <p class=""><span class="infoList">Price:   </span>$ <%= currentUser.itemsBought[i].price %></p>
-            <p class=""><span class="infoList">Category:   </span><%= currentUser.itemsBought[i].category %></p>
-            <p class=""><span class="infoList">Location:   </span><%= currentUser.itemsBought[i].location %></p>
-            <p class=""><span class="infoList">Description:   </span><%= currentUser.itemsBought[i].discription %></p>
+            <div class="row">
+	          <div class="col-4">
+	            <p class="infoList">Name:</p>
+	            <p class="infoList">Price:</p>
+	            <p class="infoList">Category:</p>
+	            <p class="infoList">Location:</p>
+	            <p class="infoList">Description:</p>
+	          </div>
+	          <div class="col-8">
+	            <p class="infoData"><%= currentUser.itemsBought[i].name %></p>
+	            <p class="infoData">$<%=currentUser.itemsBought[i].price  %></p>
+	            <p class="infoData"><%= currentUser.itemsBought[i].category %></p>
+	            <p class="infoData"><%= currentUser.itemsBought[i].location %></p>
+	            <p class="infoData"><%= currentUser.itemsBought[i].description %></p>
+	          </div>
+        	</div>
       </div>
     </div>
   </div>
-
-
-<!--
-category		: {type: String, required: true},
-	discription	: {type: String, required: true},
-	location		: {type: String, required: true},
-	inStock			: {type: String, required: true} -->
-
 <%}%>
 
 <% include ../partials/_foot%>
