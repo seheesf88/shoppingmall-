@@ -2,7 +2,7 @@
 <% include ../partials/_navbarUser%>
 
 <div class="container text-center">
-	<h2> Order History </h2>	
+	<h2> Order History </h2>
 </div>
 
 <%for(let i=0; i<currentUser.itemsBought.length; i++) {%>
@@ -18,17 +18,26 @@
 
 
 	<div class="container mt-5 pt-5">
-    <div class="row border border-primary mt-1 pt-3">
-      <div class="col-4 offset-1 pt-5 mb-3">
-          <img src="<%=currentUser.itemsBought[i].imageUrl%>" height="250" width="250" class ="rounded">
+    <div class="row border border-secondary mt-1 pt-3">
+      <div class="col-4 pt-2 mb-5 offset-1 mr-3">
+          <img src="<%=currentUser.itemsBought[i].imageUrl%>" height="300" width="300" class ="rounded">
       </div>
       <div class="info col-5 offset-1 mr-3 mb-3">
       		<p class=""><span class="infoList">Name:     </span><%= currentUser.itemsBought[i].name %></p>
             <p class=""><span class="infoList">Price:   </span>$ <%= currentUser.itemsBought[i].price %></p>
+            <p class=""><span class="infoList">Category:   </span><%= currentUser.itemsBought[i].category %></p>
+            <p class=""><span class="infoList">Location:   </span><%= currentUser.itemsBought[i].location %></p>
+            <p class=""><span class="infoList">Description:   </span><%= currentUser.itemsBought[i].discription %></p>
       </div>
     </div>
   </div>
 
+
+<!--
+category		: {type: String, required: true},
+	discription	: {type: String, required: true},
+	location		: {type: String, required: true},
+	inStock			: {type: String, required: true} -->
 
 <%}%>
 
