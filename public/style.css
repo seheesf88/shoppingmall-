@@ -22,8 +22,13 @@ img {
   font-size: 25px;
   font-weight: bold;
 }
+
+.infoData{
+  font-size: 25px;
+}
+
 .info {
-  font-size: 22px;  
+  font-size: 22px;
 }
 
 .nav-item {
