@@ -33,7 +33,6 @@
           </div>
           <div class="form-group">
               <label class="mb-0" for="exinStock">In stock</label>
-              <!-- <input type="Number" name="delivery" required class="form-control" id="exinStock" placeholder="true"> -->
               <select name="inStock" required class="form-control" id="exinStock" value="<%=item.inStock%>">
                 <option value="In Stock">In Stock</option>
                 <option value="Coming Soon">Coming Soon</option>
@@ -41,11 +40,11 @@
           </div>
           <div class="form-group">
               <label class="mb-0" for="exUrl">Url</label>
-              <input type="url" name="imageUrl" required class="form-control" id="exUrl" value="<%=item.imageUrl%>">
+              <input type="url" name="imageUrl" required class="form-control" id="exUrl" value="<%=item.imageUrl%>" />
           </div>
           <div class="form-group">
               <label class="mb-0" for="exDescription">Description</label>
-              <textarea name="description" rows="8" cols="80" required class="form-control" id="exDescription" value="<%=item.description%>"></textarea>
+              <textarea name="description" rows="8" cols="80" required class="form-control" id="exDescription"><%=item.description%></textarea>
           </div>
           <div class="text-center">
               <button type="submit" class="btn btn-primary">Edit</button>

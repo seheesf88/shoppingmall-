@@ -33,29 +33,33 @@ img {
 
 .nav-item {
   font-size: 24px;
+  color: rgba(0,0,0,.5);
 }
 
-/* .top-section {
+.nav-item:hover {
+  color: #333;
+  text-decoration: none;
+}
+
+.top-section {
   height: 440px;
   background-color: rgba(255,0,0,0.1);
   background-image: url(images/temp-bg.jpg);
   background-size: cover;
   background-position-y: -200px;
   background-repeat: no-repeat;
-} */
-
-.top-section {
-  height: 320px;
-  background-color: rgba(255,0,0,0.1);
-  background-image: url(images/LOGO-03.png);
-  background-size: cover;
-  /* background-position-y: -200px; */
-  background-repeat: no-repeat;
 }
 
+
 #logo {
-  height: 60px;
-  width: 80%;
+  /* height: 60px;
+  width: 80%; */
+  width: 250px;
+}
+
+.styledCarouselImage{
+  height: 500px;
+  width: 100%;
 }
 
 .jumbotron {
@@ -81,4 +85,9 @@ img {
 
 .jumbotron .container {
   max-width: 40rem;
+}
+
+.picture{
+  height: 200px;
+  width: 200px;
 }
