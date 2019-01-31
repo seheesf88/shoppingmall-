@@ -7,42 +7,36 @@
 <%}%>
 
 <main>
-	<div class="text-center">
-			<h2>Item list</h2>
-	</div>
-
-	<div class="album py-5">
-    <div class="container">
-      <div class="row">
-
-					<%for(let i = 0; i < allItems.length; i++) {%>
-
-						<div class="itemContainer col-md-4">
-				      <div class="card mb-4 shadow-sm">
-				        <img src="<%=allItems[i].imageUrl%>" class="img-fluid ml-0 mt-3 mr-3 p-3" />
-									<div class="itemInfo text-center">
-										<h2><%=allItems[i].name%></h2>
-										<h2>$ <%=allItems[i].price%></h2>
-									</div>
-
-								<div class="card-body">
-				          <div class="text-center">
-
-										<%if(!foundUser.admin){%>
-												<a href="/users/items/<%=allItems[i]._id%>" class="btn btn-md btn-outline-secondary">View</a>
-										<%}else{%>
-												<a href="/admins/<%=allItems[i]._id%>" class="btn btn-md btn-outline-secondary">View</a>
-										<%}%>
-
-				          </div>
-				        </div>
-				      </div>
-				    </div>
-						<%}%>
-			</div>
+	<div class="container">
+		<div class="text-center">
+				<h2>Item list</h2>
 		</div>
-	</div>
 
+					<div class="card-columns">
+
+						<%for(let i = 0; i < allItems.length; i++) {%>
+
+							<div class="card">
+								<img src="<%=allItems[i].imageUrl%>" class="img-fluid ml-0 mt-3 mr-3 p-3" />
+								<div class="card-body">
+								  <h5 class="card-title"><%=allItems[i].name%></h5>
+								  <p class="card-text">$ <%=allItems[i].price%></p>
+								
+							
+
+							<%if(!foundUser.admin){%>
+									<a href="/users/items/<%=allItems[i]._id%>" class="btn btn-md btn-outline-secondary">View</a>
+							<%}else{%>
+									<a href="/admins/<%=allItems[i]._id%>" class="btn btn-md btn-outline-secondary">View</a>
+							<%}%>
+
+								</div>
+
+							</div>
+
+						<%}%>
+				</div>
+	</div>
 </main>
 
 

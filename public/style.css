@@ -73,3 +73,23 @@ img {
   height: 200px;
   width: 200px;
 }
+
+.card-columns {
+  column-count: 2;
+}
+
+@media screen (max-width: 800px) {
+  .card-columns {
+    column-count: 2;
+  }
+}
+
+@media (max-width: 500px) {
+  .card-columns {
+    column-count: 1;
+  }
+}
+
+
+
+
