@@ -9,28 +9,39 @@
           <img src="<%= item.imageUrl%>" height="200" width="200" class="rounded" mb-1><br/>
       </div>
       <div class="info col-5 offset-1">
-              <p class=""><span class="infoList">Name:     </span><%= item.name %></p>
-              <p class=""><span class="infoList">Price:   </span>$ <%= item.price %></p>
-              <p class=""><span class="infoList">Category: </span> <%= item.category %></p>
-              <p class=""><span class="infoList">Location: </span> <%= item.location %></p>
-              <p class=""><span class="infoList">In Stock: </span> <%= item.inStock %></p>
+        <div class="row">
+          <div class="col-4">
+            <p class="infoList">Name:</p>
+            <p class="infoList">Price:</p>
+            <p class="infoList">Category:</p>
+            <p class="infoList">Location:</p>
+            <p class="infoList">In Stock:</p>
+          </div>
+          <div class="col-8">
+            <p class="infoData"><%= item.name %></p>
+            <p class="infoData">$<%=item.price %></p>
+            <p class="infoData"><%= item.category %></p>
+            <p class="infoData"><%= item.location %></p>
+            <p class="infoData"><%= item.inStock %></p>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 
   <div class="container mt-5 pt-5">
     <div class="col-10 offset-1 pb-4 h3">
-        Discription:
+        Description:
       </div>
       <div class="col-10 offset-1 border">
         <div class="pt-5 pb-5 pl-3 pr-3">
-          <%= item.discription %>
+          <pre><%= item.description %></pre>
         </div>
       </div>
   </div>
 
   <div class="container mt-5 pt-5">
-    <div class="row d-flex justify-content-around">
+    <div class="row">
       <div class="col-1 offset-5">
         <a href="/admins/<%=item._id%>/edit" class="btn btn-lg btn-outline-secondary">Edit</a>
       </div>
