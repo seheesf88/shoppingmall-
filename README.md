@@ -23,7 +23,7 @@ The way the site currently works is that the admin has the ability to create the
 
 ### UserStories [Needs to be updated for the current projected]:
 
-Given below is the link to the userStories used for this project:
+Given below is the userStories used for this project:
 
 ![UserStories Link](https://git.generalassemb.ly/AkshayMysore/Project1/blob/master/Additional%20Files/userStories%20Screenshot.png) 
 
@@ -56,6 +56,6 @@ With respect to forthcoming features, ooooh, we have a lot of them planned for f
 	8. Provide profile picture option for user and admin. 
 	9. Confirm password authentication when updating profile password and creating account.
 	10. Create a modal for an about section of the page.
-	11. Allow multiple items to be placed on the market for sale
+	11. Allow multiple items to be placed on the market for sale.
 
 Please let us know if you want us to add any other features that you would like. We are looking to expand our site in functionality and design so any recommendations will be happily accepted.
