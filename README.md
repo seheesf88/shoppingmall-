@@ -4,7 +4,7 @@
 
 
 
-### Hosted Project Link: 
+### Hosted Project Link: [Needs to be linked here]
 
 The website that we came up with is **Shopaholic**. Most retail shopping sites like Amazon, Walmart and Ebay that people visit bombard you with a lot of information which makes the experience to navigate the site poor. People are left confused as to which item to exactly buy, where to buy it and so on. As a result, we wanted to build a site with a design-first focus that made it a good and pleasurable experience for the user. Thus, came up the idea for **Shopaholic**.  
 
@@ -19,9 +19,9 @@ There was a lot of work that was put in from all the team members to make this p
 
 ### Installation Requirements:
 
-The way the site currently works is that the admin has the ability to create the items and put them on the market. In order to create and admin account, you will need to register an account with the email as **admin@gmail.co**. Once the admin account has been created, you will be able to add as many items on the market as you want. You can then create user accounts by filling it with any information. Once logged in, the user can view all the items on the market, updated his profile info, view his order history and buy an item on the market. 
+The way the site currently works is that the admin has the ability to create the items and put them on the market. In order to create and admin account, you will need to register an account with the email as **admin@gmail.com**. Once the admin account has been created, you will be able to add as many items on the market as you want. You can then create user accounts by filling it with any information. Once logged in, the user can view all the items on the market, updated his profile info, view his order history and buy an item on the market. 
 
-### UserStories ( Needs to be updated for the current projected ):
+### UserStories [Needs to be updated for the current projected]:
 
 Given below is the link to the userStories used for this project:
 
@@ -31,7 +31,7 @@ Given below is the link to the userStories used for this project:
 
 Given below is the wireFrame link used for this project:
 
-![wireFrame Screenshot](https://app.moqups.com/seheesf88@gmail.com/gsDUXUNawe/edit/page/a86e37c26)
+[Wireframe Link](https://app.moqups.com/seheesf88@gmail.com/gsDUXUNawe/edit/page/a86e37c26)
 
 
 ### Contributer Information:
@@ -56,5 +56,6 @@ With respect to forthcoming features, ooooh, we have a lot of them planned for f
 	8. Provide profile picture option for user and admin. 
 	9. Confirm password authentication when updating profile password and creating account.
 	10. Create a modal for an about section of the page.
+	11. Allow multiple items to be placed on the market for sale
 
-
+Please let us know if you want us to add any other features that you would like. We are looking to expand our site in functionality and design so any recommendations will be happily accepted.
