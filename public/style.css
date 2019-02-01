@@ -5,6 +5,7 @@ html {
 
 body {
   margin-bottom: 140px;
+  font-family: 'KoHo', sans-serif;
 }
 
 footer {
@@ -19,12 +20,12 @@ img {
 }
 
 .infoList{
-  font-size: 25px;
-  font-weight: bold;
+  font-size: 20px;
+  /* font-weight: bold; */
 }
 
 .infoData{
-  font-size: 25px;
+  font-size: 20px;
 }
 
 .info {
@@ -33,11 +34,11 @@ img {
 
 .nav-item {
   font-size: 24px;
-  color: rgba(0,0,0,.5);
+  color: white;
 }
 
 .nav-item:hover {
-  color: #333;
+  color: #FFDA00;
   text-decoration: none;
 }
 
