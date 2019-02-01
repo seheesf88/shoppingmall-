@@ -7,6 +7,7 @@ const authControllers = require("./controllers/authControllers");
 const bodyParser = require("body-parser");
 const methodOverride = require("method-override");
 const session = require("express-session");
+const PORT = process.env.PORT || 3000; 
 
 
 app.use(session({
@@ -31,6 +32,6 @@ app.get("/", (req, res) => {
 
 
 
-app.listen(3000, () => {
+app.listen(PORT, () => {
   console.log('listening on port 3000');
 });

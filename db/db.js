@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 
 //connection string assumed to be port 27017 if not specified
-const connectionString = "mongodb://localhost:27017/project2";
+const connectionString = process.env.MONGODB_URI || "mongodb://localhost:27017/project2";
 
 mongoose.connect(connectionString, {
 	useNewUrlParser : true,
