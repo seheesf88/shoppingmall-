@@ -25,7 +25,7 @@ The way the site currently works is that the admin has the ability to create the
 
 Given below is the userStories used for this project:
 
-![UserStories Link](https://git.generalassemb.ly/AkshayMysore/Project1/blob/master/Additional%20Files/userStories%20Screenshot.png) 
+![UserStories Link](https://git.generalassemb.ly/AkshayMysore/Project-2/blob/master/public/extra/userStories.png) 
 
 ### Wireframes:
 
