@@ -14,7 +14,7 @@ router.get("/homepage", async (req,res) => {
 		const allItems = await Item.find({});
 		console.log(foundUser);
 
-		res.render("homepage.ejs", {
+		res.render("homePage.ejs", {
 			foundUser,
 			allItems
 		});

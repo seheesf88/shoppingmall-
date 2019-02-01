@@ -9,7 +9,7 @@ router.get("/homepage", async (req,res) => {
 	try{
 		const foundUser = await User.findOne({"email": req.session.email});
 		const allItems = await Item.find({});
-		res.render("homepage.ejs", {
+		res.render("homePage.ejs", {
 			foundUser,
 			allItems
 		});
